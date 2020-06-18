@@ -28,6 +28,7 @@ public class Chat extends UnicastRemoteObject implements ChatInterface{
     private FileReader fr = null;
     private BufferedReader br = null;
     private FileWriter fw = null;
+    private String selectedPath;
 
     public Chat(String n) throws RemoteException {
         this.name = n;
@@ -35,9 +36,13 @@ public class Chat extends UnicastRemoteObject implements ChatInterface{
     public void setFilePath(String s) throws RemoteException{
         this.file=new File(s);
     }
+    public void setFileData(String s) throws RemoteException{
+        this.selectedPath=s;
+    }
     
-    public String getFileData() throws RemoteException{
-        return leerArchivo();
+    public File getFileData() throws RemoteException{
+        File buscar = new File(selectedPath);
+        return buscar;
     }
 
     public String getName() throws RemoteException {

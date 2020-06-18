@@ -27,7 +27,7 @@ public class Server {
             Chat server = new Chat(name);
             Registry registry = LocateRegistry.createRegistry(8888);
             registry.bind("ejemplo", server);
-
+            server.setFileData("./serverDocs");
             while (true) {
                 String msg = s.nextLine().trim();
                 if (server.getClient() != null) {

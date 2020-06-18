@@ -172,13 +172,12 @@ public class ClientFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             if(loggedUser){
-                String OrigenCarpeta = "./serverDocs";
-                File directorio = new File(OrigenCarpeta);
-                directorio.mkdir();
+                //String OrigenCarpeta = "./serverDocs";
+                //File directorio = new File(OrigenCarpeta);
+                //directorio.mkdir();
                 DefaultTreeModel m = (DefaultTreeModel) jt_Panel_Files.getModel();
-                m.setRoot(new DefaultMutableTreeNode("./serverDocs"));
-                File buscar = new File("./serverDocs" );
-                listarOrganizador(buscar, (DefaultMutableTreeNode) m.getRoot());
+                m.setRoot(new DefaultMutableTreeNode("Files"));
+                listarOrganizador(server.getFileData(), (DefaultMutableTreeNode) m.getRoot());
             }else{
                 JOptionPane.showMessageDialog(this, "Log in first");
             }

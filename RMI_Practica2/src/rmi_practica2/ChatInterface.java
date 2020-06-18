@@ -18,7 +18,8 @@ public interface ChatInterface extends Remote{
         public void setClient(String userName, ChatInterface c)throws RemoteException;
         public String leerArchivo() throws RemoteException;
 	public void escribirArchivo(String msg) throws RemoteException;
-        public String getFileData() throws RemoteException;
+        public File getFileData() throws RemoteException;
+        public void setFileData(String fD) throws RemoteException;
         public void setFilePath(String s) throws RemoteException;
         public void createFile(String fileName) throws RemoteException;
         public boolean verifyExist(String fileNameVerify) throws RemoteException;
