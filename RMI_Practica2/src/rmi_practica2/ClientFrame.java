@@ -93,6 +93,11 @@ public class ClientFrame extends javax.swing.JFrame {
         });
 
         jb_write_overwrite_data.setText("Escribir");
+        jb_write_overwrite_data.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_write_overwrite_dataMouseClicked(evt);
+            }
+        });
 
         ta_data.setColumns(20);
         ta_data.setRows(5);
@@ -276,6 +281,21 @@ public class ClientFrame extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jb_create_file1MouseClicked
+
+    private void jb_write_overwrite_dataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_write_overwrite_dataMouseClicked
+        // TODO add your handling code here:
+        try {
+            if(loggedUser){
+                String dataExtractor= ta_data.getText();
+                server.escribirArchivo(dataExtractor);
+                JOptionPane.showMessageDialog(this, "Data has been overwritten");
+            }else{
+                JOptionPane.showMessageDialog(this, "Login required");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jb_write_overwrite_dataMouseClicked
 
     /**
      * @param args the command line arguments

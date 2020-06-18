@@ -149,6 +149,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Escribir"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_write_overwrite_dataMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_create_file_name">
     </Component>
