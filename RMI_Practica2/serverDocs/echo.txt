@@ -1,0 +1,9 @@
+Coordinates
+255 958
+Objective
+Armored Convy
+2 Tiger Tanks
+1 King Tiger 128 MM
+4 Half Tracks
+20 On-foot units
+Unknown Objective
